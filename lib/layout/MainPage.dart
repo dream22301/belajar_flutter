@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:xi_rpl/layout/DetailPage.dart';
 import 'package:xi_rpl/layout/ProfilePage.dart';
 
 class MainPage extends StatefulWidget {
@@ -22,25 +21,6 @@ class _MainPageState extends State<MainPage> {
       appBar: AppBar(title: Text('Ini Homepage'),),
       body: Column(
         children: [
-          SizedBox(
-            height: screenHeight * 0.05,
-            width: screenWidth * 1,
-            child: Container(
-              alignment: Alignment.centerRight,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
-                },
-                child: SizedBox(
-                  height: 100,
-                  width: 100,
-                  child: Center(
-                    child: Text('Profile Page'),
-                  ),
-                ),
-              ),
-            ),
-          ),
           SizedBox(
             height: screenHeight * 0.7,
             width: screenWidth * 1,
@@ -67,12 +47,12 @@ class _MainPageState extends State<MainPage> {
                 ),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute<void>(builder: (context) => Detailpage(userName: Nama,)));
+                    Navigator.push(context, MaterialPageRoute<void>(builder: (context) => ProfilePage(userName: Nama,)));
                   },
                   child: SizedBox(
                     height: 50,
                     width: 100,
-                    child: Center(child: Text('Detail Page')),
+                    child: Center(child: Text('Next')),
                   ),
                 )
               ],

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class Detailpage extends StatelessWidget {
   final String userName;
-  const Detailpage({super.key, required this.userName});
+  final String Umur;
+  const Detailpage({super.key, required this.userName, required this.Umur});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class Detailpage extends StatelessWidget {
           spacing: 10,
           children: [
             Text(
-              'Nama kamu pasti: $userName'
+              'Nama kamu pasti: $userName dan umur kamu pasti $Umur'
             ),
             ElevatedButton(child: Text('Kembali Ke Halaman Awal'), onPressed: () {
               Navigator.pop(context);
