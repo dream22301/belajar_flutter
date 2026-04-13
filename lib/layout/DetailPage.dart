@@ -1,20 +1,26 @@
 import 'package:flutter/material.dart';
 
 class Detailpage extends StatelessWidget {
-  const Detailpage({super.key});
+  final String userName;
+  const Detailpage({super.key, required this.userName});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Center(
-            child: ElevatedButton(onPressed: () {
+      appBar: AppBar(title: Text('Detail Page'),),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 10,
+          children: [
+            Text(
+              'Nama kamu pasti: $userName'
+            ),
+            ElevatedButton(child: Text('Kembali Ke Halaman Awal'), onPressed: () {
               Navigator.pop(context);
-            }, child: Text('data')),
-          )
-        ],
+            },)
+          ],
+        ),
       ),
     );
   }
